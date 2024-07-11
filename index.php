@@ -17,17 +17,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Simple Pagination</title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"/>
 </head>
-<body>
-	<header>
-		<h1>Simple Pagination</h1>
-	</header>
-	<main>
-		<section class="table-responsive" id="hitsTbl"></section>
+<body class="bg-light">
+	<main class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-lg-10 p-4 px-0 py-4">
+				<header class="row">
+					<div class="col">
+						<h1>Simple Pagination</h1>
+					</div>
+					<div class="col text-end">
+						<a href="Screenshot.png" class="text-decoration-none" data-lightbox="image-1" data-title="Simple Pagination">&#128065;&nbsp;Preview</a>
+					</div>
+				</header>
+				<section class="table-responsive" id="hitsTbl"></section>
+			</div>
+		</div>
 	</main>
 	<footer></footer>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			// debugger;
@@ -55,7 +66,7 @@
                 	if(returnStatus == 200){
                 		if(data['hits']['data'] != null){
                 			// var srNo = 1;
-                			var table = '<table class="table table-sm table-striped table-bordered">';
+                			var table = '<table class="table table-sm table-striped table-bordered shadow rounded-3">';
                 			var thead = table + '<thead class="table-dark"><tr><td align="center">#</td><td>Date</td><td>Source</td><td align="center">Hits</td></tr></thead>';
                 			var tbody = thead+'<tbody>';
                 			var tblRow = '';

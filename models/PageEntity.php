@@ -7,7 +7,7 @@ namespace PageEntities{
 	final class PageEntity{
 		private $dbCon = null;
 		function __construct(){
-			$this->dbCon = mysqli_connect('localhost', 'root', '','<YOURDB>');
+			$this->dbCon = mysqli_connect('localhost', 'root', '','blogdbn');
 		}
 		public function GetHits($paging=FALSE, $pageSize=NULL, $pageNumber=NULL){
 			$hitResponse = array(
