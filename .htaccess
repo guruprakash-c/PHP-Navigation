@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /SOA/
+
+# Redirect requests from /category/article to page.php
+RewriteRule ^([a-zA-Z0-9_-]+)(/([a-zA-Z0-9_-]+))?(/([a-zA-Z0-9_-]+))?/?$ $1.php?category=$3&article=$5 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
+
+# RewriteLog "/rewrite.log"
+# RewriteLogLevel 3
+# LogLevel alert rewrite:trace3
